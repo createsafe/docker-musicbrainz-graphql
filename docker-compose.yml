@@ -1,0 +1,25 @@
+version: '3'
+services:
+    web:
+      build: .
+      ports:
+        - "49000:8080"
+      volumes:
+        - ./:/usr/src/app
+        - logvolume01:/var/log
+      depends_on:
+        - db
+      environment:
+        PGUSER: dev
+        PGPASSWORD: dev
+        PGHOST: db
+        PGPORT: 5432
+        PGDATABASE: dev 
+    db:
+      image: postgres
+      restart: always
+      environment:
+        POSTGRES_USER: dev
+        POSTGRES_PASSWORD: dev
+volumes:
+  logvolume01: {}
