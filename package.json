@@ -1,15 +1,19 @@
 {
-  "name": "docker_web_app",
+  "name": "createsafe-postgre",
   "version": "1.0.0",
-  "description": "Node.js on Docker",
-  "author": "First Last <first.last@example.com>",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node server"
+    "start": "docker-compose -f docker-compose.yml up --build"
   },
-  "dependencies": {
-    "express": "^4.16.1",
-    "pg": "^7.4.1",
-    "postgraphile": "^4.0.0-alpha2.33"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-simian/createsafe-graphite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/the-simian/createsafe-graphite/issues"
+  },
+  "homepage": "https://github.com/the-simian/createsafe-graphite#readme"
 }
