@@ -1,14 +1,7 @@
 'use strict';
 
 const express = require('express');
-const {Client} = require('pg');
-
-const client = new Client();
-
-client.connect().then(() => {
-  console.log(client);
-});
-
+const {postgraphile} = require('postgraphile');
 
 // Constants
 const PORT = 8080;
@@ -16,6 +9,7 @@ const HOST = '0.0.0.0';
 
 // App
 const app = express();
+app.use(postgraphile('postgres://dev:dev@db/dev', 'public', {graphiql: true}))
 app.get('/', (req, res) => {
   res.send('Hello world\n');
 });

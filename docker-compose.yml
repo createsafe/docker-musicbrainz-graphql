@@ -8,7 +8,7 @@ services:
         - ./:/usr/src/app
         - logvolume01:/var/log
       depends_on:
-        - db
+        - "db"
       environment:
         PGUSER: dev
         PGPASSWORD: dev
@@ -16,8 +16,10 @@ services:
         PGPORT: 5432
         PGDATABASE: dev 
     db:
-      image: postgres
+      build: ./db/
       restart: always
+      ports:
+        - "5432:5432"
       environment:
         POSTGRES_USER: dev
         POSTGRES_PASSWORD: dev
