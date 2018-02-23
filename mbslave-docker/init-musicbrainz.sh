@@ -1,5 +1,5 @@
 #!/bin/bash
-# set -e
+`set -e`
 
 createuser musicbrainz
 createdb -l C -E UTF-8 -T template0 -O musicbrainz musicbrainz
