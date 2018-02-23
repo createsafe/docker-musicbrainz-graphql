@@ -22,8 +22,8 @@ services:
       restart: always
       ports:
         - "5432:5432"
-      environment:
-        POSTGRES_USER: musicbrainz 
+      # environment:
+        # POSTGRES_USER: musicbrainz 
         # POSTGRES_PASSWORD: dev
 volumes:
   logvolume01: {}
