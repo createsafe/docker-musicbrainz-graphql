@@ -1,6 +1,7 @@
 # createsafe-graphite
 
 Download the sample DB: https://drive.google.com/open?id=1Mu9PAtzpsr1UNJtt3w0kltpURaR1MrwE
+
 You cannot use the one from their website, as it's in a diff format from the actual db dumps (why?).
 
 Once you've downloaded the DB and cloned this repo, put the sample db (mbdump-sample.tar.bz2) into the mbslave directory in the repo.
