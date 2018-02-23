@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "docker-compose -f docker-compose.yml down",
     "start": "docker-compose -f docker-compose.yml up --build"
   },
   "repository": {
