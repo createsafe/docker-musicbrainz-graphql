@@ -1,6 +1,9 @@
 #!/bin/bash
+sleep 1
 createuser musicbrainz
+sleep 1
 createdb -l C -E UTF-8 -T template0 -O musicbrainz musicbrainz
+sleep 1
 psql musicbrainz -c 'CREATE EXTENSION cube;'
 psql musicbrainz -c 'CREATE EXTENSION earthdistance;'
 
