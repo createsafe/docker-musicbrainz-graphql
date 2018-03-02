@@ -1,5 +1,4 @@
 #!/bin/bash
-
 createuser musicbrainz
 createdb -l C -E UTF-8 -T template0 -O musicbrainz musicbrainz
 psql musicbrainz -c 'CREATE EXTENSION cube;'
