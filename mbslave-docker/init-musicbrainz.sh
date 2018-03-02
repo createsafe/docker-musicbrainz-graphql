@@ -1,7 +1,9 @@
 #!/bin/bash
 sleep 1
+echo "creating user"
 createuser musicbrainz
 sleep 1
+echo "creating db"
 createdb -l C -E UTF-8 -T template0 -O musicbrainz musicbrainz
 sleep 1
 psql musicbrainz -c 'CREATE EXTENSION cube;'
