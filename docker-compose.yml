@@ -23,7 +23,7 @@ services:
       ports:
         - "5432:5432"
       # environment:
-        # POSTGRES_USER: dev
+        # POSTGRES_USER: musicbrainz 
         # POSTGRES_PASSWORD: dev
 volumes:
   logvolume01: {}

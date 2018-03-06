@@ -6,6 +6,7 @@
   "scripts": {
     "init": "docker-compose up --build db",
     "start": "docker-compose up"
+    "clean": "docker-compose -f docker-compose.yml down",
   },
   "repository": {
     "type": "git",
