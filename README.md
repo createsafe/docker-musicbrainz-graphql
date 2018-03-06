@@ -53,3 +53,5 @@ query getAll {
   }
 }
 ```
+
+![musicbrainz](https://user-images.githubusercontent.com/954596/37055656-da0e3738-2147-11e8-9654-cb8935df3036.gif)
