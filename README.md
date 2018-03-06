@@ -41,3 +41,15 @@ Navigating to `localhost:49000/graphiql` will now open the graphql playground.
 
 You can inspect all available queries by clicking 'docs' in the upper right hand corner.
 ![image](https://user-images.githubusercontent.com/954596/37054508-aba4827e-2144-11e8-820e-29f31acea82f.png)
+
+If you'd like a sample query to immediately see results, try this:
+
+```gql
+query getAll {
+  allTracks(first: 1000) {
+    nodes {
+      name
+    }
+  }
+}
+```
