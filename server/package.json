@@ -1,5 +1,5 @@
 {
-  "name": "docker_web_app",
+  "name": "docker-musicbrainz-graphql-docker-web-app-server",
   "version": "1.0.0",
   "description": "Node.js on Docker",
   "author": "First Last <first.last@example.com>",
