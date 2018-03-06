@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "docker-compose -f docker-compose.yml up --build"
+    "init": "docker-compose up --build db",
+    "start": "docker-compose up"
   },
   "repository": {
     "type": "git",
