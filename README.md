@@ -1,14 +1,26 @@
 # createsafe-graphite
 
-1.  Download the sample DB: https://drive.google.com/open?id=1Mu9PAtzpsr1UNJtt3w0kltpURaR1MrwE
+## Quick Start
 
-You cannot use the one from their website, as it's in a diff format from the actual db dumps (why?).
+There are onl3 three steps to get this up and running
+
+1.  Get the database
+2.  Provision Docker
+3.  Run the container
+
+--
+
+1.  Get the database
+
+Download the sample DB: https://drive.google.com/open?id=1Mu9PAtzpsr1UNJtt3w0kltpURaR1MrwE
+
+You cannot use the one from their website, as unfrotunately it's in a diff format from the actual db dumps (why?).
 
 Once you've downloaded the DB and cloned this repo, put the sample db (mbdump-sample.tar.bz2) into the mbslave directory in the repo.
 
-Now there are two steps to run.
+Now there are two more steps to run.
 
-1.  initialize the database.
+2.  Provision Docker
 
 ```sh
 npm run init
@@ -16,7 +28,7 @@ npm run init
 
 The database will begin to initialize. You should see mesages like `CREATE VIEW`, `CREATE INDEX`, etc. when the initialization has concluded you will get a message like `INITIALIZATION DONE, PRESS CTRL+C to end container, and run with npm run start`. Now stop the process, and run the next command.
 
-2.  run the container
+3.  Run the container
 
 ```sh
 npm run start
