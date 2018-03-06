@@ -1,13 +1,14 @@
 # createsafe-graphite
 
-Download the sample DB: https://drive.google.com/open?id=1Mu9PAtzpsr1UNJtt3w0kltpURaR1MrwE
+1. Download the sample DB: https://drive.google.com/open?id=1Mu9PAtzpsr1UNJtt3w0kltpURaR1MrwE
 
 You cannot use the one from their website, as it's in a diff format from the actual db dumps (why?).
 
 Once you've downloaded the DB and cloned this repo, put the sample db (mbdump-sample.tar.bz2) into the mbslave directory in the repo.
 
 ```sh
-run npm-start
+npm run init
+npm start
 ```
 
 This will run docker compose, setup the node and db containers, and run the node server on port 49000.
