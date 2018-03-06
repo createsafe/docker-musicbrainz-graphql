@@ -1,5 +1,9 @@
 # createsafe-graphite
 
+This project is a way to get up and running quickly with Docker, Graphql, and the Musicbrainz Database by leveraging the power of graphile. In under 10 minutes, you will be able to immediatly begin work with the MusicBrainz DB. The returned data follows [the Relay specification.](https://facebook.github.io/relay/graphql/connections.htm)
+
+![image](https://user-images.githubusercontent.com/954596/37055130-84fce718-2146-11e8-88b3-8e9a4c3e34d2.png)
+
 ## Quick Start
 
 There are only 3 three steps to follow to get this up and running
