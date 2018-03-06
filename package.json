@@ -1,0 +1,21 @@
+{
+  "name": "createsafe-postgre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init": "docker-compose up --build db",
+    "start": "docker-compose up",
+    "clean": "docker-compose -f docker-compose.yml down"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-simian/createsafe-graphite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/the-simian/createsafe-graphite/issues"
+  },
+  "homepage": "https://github.com/the-simian/createsafe-graphite#readme"
+}
