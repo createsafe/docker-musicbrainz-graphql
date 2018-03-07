@@ -1,29 +1,19 @@
 version: '3'
 services:
     web:
-      build: ./server/
+      build: ./src/
       ports:
         - "49000:8080"
-      working_dir: /app
       command: npm start
       volumes:
-        - ./server/:/app
+        - ./src/:/app
         - /app/node_modules
       depends_on:
         - "db"
-      environment:
-        PGUSER: dev
-        PGPASSWORD: dev
-        PGHOST: db
-        PGPORT: 5432
-        PGDATABASE: dev 
     db:
       build: ./mbslave-docker/
       restart: always
       ports:
         - "5432:5432"
-      # environment:
-        # POSTGRES_USER: musicbrainz 
-        # POSTGRES_PASSWORD: dev
 volumes:
   logvolume01: {}
