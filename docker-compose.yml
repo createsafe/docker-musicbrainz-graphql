@@ -1,13 +1,13 @@
 version: '3'
 services:
     web:
-      build: ./server/
+      build: ./src/
       ports:
         - "49000:8080"
       working_dir: /app
       command: npm start
       volumes:
-        - ./server/:/app
+        - ./src/:/app
         - /app/node_modules
       depends_on:
         - "db"
