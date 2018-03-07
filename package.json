@@ -1,5 +1,5 @@
 {
-  "name": "createsafe-postgre",
+  "name": "docker-musicbrainz-graphql",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

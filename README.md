@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # createsafe-graphite
+=======
+# docker-musicbrainz-graphql
+>>>>>>> upstream/master
 
 This project is a way to get up and running quickly with Docker, Graphql, and the Musicbrainz Database by leveraging the power of graphile. In under 10 minutes, you will be able to immediatly begin work with the MusicBrainz DB. The returned data follows [the Relay specification.](https://facebook.github.io/relay/graphql/connections.htm)
 
@@ -53,3 +57,5 @@ query getAll {
   }
 }
 ```
+
+![musicbrainz](https://user-images.githubusercontent.com/954596/37055656-da0e3738-2147-11e8-9654-cb8935df3036.gif)

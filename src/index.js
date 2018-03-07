@@ -14,6 +14,4 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, HOST);
-console.log('Running on http://' + HOST + ':' + PORT);
-
-console.log('weee');
+console.log(`Running on http://${HOST}:${PORT}`);

@@ -4,6 +4,7 @@ services:
       build: ./src/
       ports:
         - "49000:8080"
+      working_dir: /app
       command: npm start
       volumes:
         - ./src/:/app
