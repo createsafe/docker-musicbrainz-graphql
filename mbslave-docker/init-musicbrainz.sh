@@ -18,27 +18,47 @@ echo 'CREATE SCHEMA musicbrainz;' | ./mbslave-psql.py -S
 mbdumps=/mbdumps
 cd $mbdumps
 
-# if [ -e "$mbdumps/mbdump.tar.bz2" ]; then
-if [ -e "$mbdumps/mbdump-sample.tar.bz2" ]; then
+DUMP_FILE=""
+
+if [[ $MB_ENV == 'production' ]]; then
+  echo 'SETTING UP PRODUCTION DB';
+  DUMP_FILE="$mbdumps/mbdump.tar.bz2"; 
+else
+  echo 'SETTING UP SAMPLE DB';
+  DUMP_FILE="$mbdumps/mbdump-sample.tar.bz2"; 
+fi
+
+if [[ -e $DUMP_FILE ]]; then
     echo -e "${ylbold}\nFound the dump files.${endColor}"
 else
-  echo "would download here"
-    # LATEST="$(wget -O - http://ftp.musicbrainz.org/pub/musicbrainz/data/sample/LATEST)"
-    # wget http://ftp.musicbrainz.org/pub/musicbrainz/data/sample/$LATEST/mbdump-sample.tar.xz
-    
-    # wget http://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/$LATEST/mbdump-cdstubs.tar.bz2
-    # wget http://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/$LATEST/mbdump-derived.tar.bz2
-    # wget http://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/$LATEST/mbdump-editor.tar.bz2
-    # wget http://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/$LATEST/mbdump.tar.bz2
+  if [[ $MB_ENV == 'production' ]]; then
+    LATEST="$(wget -O - http://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/LATEST)"
+
+    wget http://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/$LATEST/mbdump-cdstubs.tar.bz2
+    wget http://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/$LATEST/mbdump-derived.tar.bz2
+    wget http://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/$LATEST/mbdump-editor.tar.bz2
+    wget http://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/$LATEST/mbdump.tar.bz2
+  fi
 fi
 
 cd /mbslave
 
-  ./mbslave-import.py $mbdumps/mbdump-sample.tar.bz2
-# ./mbslave-import.py $mbdumps/mbdump.tar.bz2 $mbdumps/mbdump-derived.tar.bz2 $mbdumps/mbdump-cdstubs.tar.bz2 \
-  # $mbdumps/mbdump-derived.tar.bz2 $mbdumps/mbdump-editor.tar.bz2
+./mbslave-import.py $DUMP_FILE
+
+if [[ $MB_ENV == 'production' ]]; then
+  ./mbslave-import.py $mbdumps/mbdump-derived.tar.bz2 
+  ./mbslave-import.py $mbdumps/mbdump-cdstubs.tar.bz2
+  ./mbslave-import.py $mbdumps/mbdump-derived.tar.bz2 
+  ./mbslave-import.py $mbdumps/mbdump-editor.tar.bz2
+fi
 
 ./mbslave-remap-schema.py <sql/CreatePrimaryKeys.sql | ./mbslave-psql.py
+# ./mbslave-remap-schema.py <sql/statistics/CreatePrimaryKeys.sql | ./mbslave-psql.py
+# ./mbslave-remap-schema.py <sql/caa/CreatePrimaryKeys.sql | ./mbslave-psql.py
+# ./mbslave-remap-schema.py <sql/wikidocs/CreatePrimaryKeys.sql | ./mbslave-psql.py
+# ./mbslave-remap-schema.py <sql/documentation/CreatePrimaryKeys.sql | ./mbslave-psql.py
+
+./mbslave-remap-schema.py <sql/CreateFKConstraints.sql | ./mbslave-psql.py
 
 ./mbslave-remap-schema.py <sql/CreateIndexes.sql | grep -v musicbrainz_collate | ./mbslave-psql.py
 ./mbslave-remap-schema.py <sql/CreateSlaveIndexes.sql | ./mbslave-psql.py
