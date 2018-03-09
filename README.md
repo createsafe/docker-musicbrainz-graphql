@@ -26,7 +26,7 @@ Now there are two more steps to run.
 ### 2. Provision Docker
 
 ```sh
-npm run init_db:test
+npm run init_db:sample
 ```
 
 Or to pull the full Musicbrainz DB
