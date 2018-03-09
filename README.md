@@ -14,7 +14,7 @@ There are only 3 three steps to follow to get this up and running
 
 ### 1. Get the database
 
-If you don't want to pull down the full production dump, you can download the (sample db)[https://drive.google.com/open?id=1Mu9PAtzpsr1UNJtt3w0kltpURaR1MrwE].
+If you don't want to pull down the full production dump, you can download the [sample db](https://drive.google.com/open?id=1Mu9PAtzpsr1UNJtt3w0kltpURaR1MrwE).
 If you're using the full db export, skip to step 2.
 
 You cannot use the sample from their website, as unfrotunately it's in a diff format from the full db dumps (why?).
