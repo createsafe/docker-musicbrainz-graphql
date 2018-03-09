@@ -8,6 +8,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.1",
     "pg": "^7.4.1",
     "postgraphile": "^4.0.0-alpha2.33"

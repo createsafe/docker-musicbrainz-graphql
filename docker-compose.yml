@@ -8,7 +8,6 @@ services:
       command: npm start
       volumes:
         - ./src/:/app
-        - /app/node_modules
       depends_on:
         - "db"
     db:
