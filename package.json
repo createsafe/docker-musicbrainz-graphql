@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "db:sample": "docker-compose up db",
-    "db:production": "docker-compose -f docker-compose.prod.yml up db",
+    "init_db:sample": "docker-compose up db",
+    "init_db:production": "docker-compose -f docker-compose.prod.yml up db",
     "start": "docker-compose up",
     "clean": "docker-compose down"
   },

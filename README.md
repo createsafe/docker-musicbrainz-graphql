@@ -14,9 +14,10 @@ There are only 3 three steps to follow to get this up and running
 
 ### 1. Get the database
 
-Download the sample DB: https://drive.google.com/open?id=1Mu9PAtzpsr1UNJtt3w0kltpURaR1MrwE
+If you don't want to pull down the full production dump, you can download the (sample db)[https://drive.google.com/open?id=1Mu9PAtzpsr1UNJtt3w0kltpURaR1MrwE].
+If you're using the full db export, skip to step 2.
 
-You cannot use the one from their website, as unfrotunately it's in a diff format from the actual db dumps (why?).
+You cannot use the sample from their website, as unfrotunately it's in a diff format from the full db dumps (why?).
 
 Once you've downloaded the DB and cloned this repo, put the sample db (mbdump-sample.tar.bz2) into the mbslave directory in the repo.
 
@@ -25,7 +26,13 @@ Now there are two more steps to run.
 ### 2. Provision Docker
 
 ```sh
-npm run init
+npm run init_db:test
+```
+
+Or to pull the full Musicbrainz DB
+
+```sh
+npm run init_db:production
 ```
 
 The database will begin to initialize. You should see mesages like `CREATE VIEW`, `CREATE INDEX`, etc. when the initialization has concluded you will get a message like `INITIALIZATION DONE, PRESS CTRL+C to end container, and run with npm run start`. Now stop the process, and run the next command.
@@ -46,7 +53,7 @@ If you'd like a sample query to immediately see results, try this:
 
 ```gql
 query getAll {
-  allTracks(first: 1000) {
+  allTracks(first: 100) {
     nodes {
       name
     }
