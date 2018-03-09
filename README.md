@@ -21,6 +21,8 @@ You cannot use the sample from their website, as unfrotunately it's in a diff fo
 
 Once you've downloaded the DB and cloned this repo, put the sample db (mbdump-sample.tar.bz2) into the mbslave directory in the repo.
 
+Make sure to change the permissions so the container can read the sample db, on linux chmod 777.
+
 Now there are two more steps to run.
 
 ### 2. Provision Docker
