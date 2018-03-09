@@ -1,0 +1,22 @@
+version: '3'
+services:
+    web:
+      build: ./src/
+      ports:
+        - "49000:8080"
+      working_dir: /app
+      command: npm start
+      volumes:
+        - ./src/:/app
+        - /app/node_modules
+      depends_on:
+        - "db"
+    db:
+      build: ./mbslave-docker/
+      restart: always
+      ports:
+        - "5432:5432"
+      environment:
+        MB_ENV: 'production'
+volumes:
+  logvolume01: {}

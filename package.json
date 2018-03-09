@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "init": "docker-compose up --build db",
+    "db:sample": "docker-compose up db",
+    "db:production": "docker-compose -f docker-compose.prod.yml up db",
     "start": "docker-compose up",
-    "clean": "docker-compose -f docker-compose.yml down"
+    "clean": "docker-compose down"
   },
   "repository": {
     "type": "git",
