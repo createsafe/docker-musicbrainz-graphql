@@ -5,11 +5,13 @@
   "author": "First Last <first.last@example.com>",
   "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start:docker": "npm i && nodemon index.js",
+    "start": "nodemon index.js"
   },
   "dependencies": {
-    "cors": "^2.8.4",
+    "cors": "2.8.4",
     "express": "^4.16.1",
+    "nodemon": "^1.17.1",
     "pg": "^7.4.1",
     "postgraphile": "^4.0.0-alpha2.33"
   }

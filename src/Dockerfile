@@ -1,8 +1,6 @@
 from node:carbon
+USER node
 
 workdir /app
 
-ADD package*.json /app/
-
-run npm install
-CMD ["npm", "start"]
+CMD ["npm", "run", "start:docker"]

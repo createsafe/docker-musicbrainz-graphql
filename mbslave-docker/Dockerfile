@@ -10,4 +10,4 @@ COPY mbslave.conf /mbslave/
 COPY init-musicbrainz.sh /docker-entrypoint-initdb.d
 COPY shutdown-after-init.sh /docker-entrypoint-initdb.d
 RUN mkdir -p /mbdumps && chown -R postgres:postgres /mbdumps
-COPY mbdump-sample.tar.bz2 /mbdumps
+COPY LICENSE *.bz2 /mbdumps/

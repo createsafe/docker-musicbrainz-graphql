@@ -18,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/the-simian/createsafe-graphite/issues"
   },
-  "homepage": "https://github.com/the-simian/createsafe-graphite#readme"
+  "homepage": "https://github.com/the-simian/createsafe-graphite#readme",
+  "dependencies": {}
 }
